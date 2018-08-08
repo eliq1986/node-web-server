@@ -2,7 +2,7 @@
 const express = require("express");
 const server = express();
 const fs = require("fs");
-
+const port = process.env.PORT || 3000;
 
 server.set("view engine", "pug");
 server.use((req, res, next)=> {
@@ -51,6 +51,6 @@ server.get("/bad", (req, res)=> {
 
 
 
-server.listen(3000, ()=> {
-  console.log("Server Running on port 3000");
+server.listen(port, ()=> {
+  console.log(`Server is up on port${port}`);
 });
